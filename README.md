@@ -127,10 +127,3 @@ Le serveur JSON est configuré dans `json-server.config.js` avec les paramètres
 - Port : 3000
 - Routes personnalisées pour les articles et catégories
 
-
-## 📞 Support
-
-Pour toute question ou problème, veuillez :
-1. Consulter la documentation
-2. Ouvrir une issue sur GitHub
-3. Contacter l'équipe de développement
