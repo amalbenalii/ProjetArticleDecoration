@@ -1,0 +1,97 @@
+{
+  "categories": [
+    {
+      "id": "2",
+      "name": "Luminaires"
+    },
+    {
+      "id": "3",
+      "name": "Décorations"
+    },
+    {
+      "id": "4",
+      "name": "Décoration murale"
+    },
+    {
+      "id": "5",
+      "name": "Art de la table & Accessoires"
+    },
+    {
+      "id": "6",
+      "name": "Textiles décoratifs"
+    },
+    {
+      "id": "7",
+      "name": "Décoration d'intérieur"
+    },
+    {
+      "id": "8",
+      "name": "Décoration saisonnière & Événementielle"
+    }
+  ],
+  "articles": [
+    {
+      "nomArt": "Lampe à sel de l’Himalaya",
+      "description": "Lampe apaisante en cristal de sel naturel, diffusant une lumière chaude et relaxante. Purifie l’air et crée une ambiance zen.",
+      "categorie": "Luminaires",
+      "prix": 250,
+      "stock": 6,
+      "image": "assets/lampe-de-sel.jpg",
+      "id": "4d01"
+    },
+    {
+      "id": "a0dc",
+      "nomArt": "Lustre industriel en métal",
+      "description": " Design épuré avec des finitions métalliques brutes, idéal pour un style loft ou industriel. Ampoules Edison incluses.",
+      "categorie": "Luminaires",
+      "prix": 526.3,
+      "stock": 4,
+      "image": "assets/lustremetal.jpg"
+    },
+    {
+      "nomArt": "Lustre en cristal",
+      "description": "Lustre élégant avec des pendentifs en cristal taillé, parfait pour ajouter une touche de luxe à votre salon ou salle à manger. Disponible en plusieurs tailles.",
+      "categorie": "Luminaires",
+      "prix": 850.6,
+      "stock": 6,
+      "image": "assets/lustrecristal.jpg",
+      "id": "b0b0"
+    },
+    {
+      "nomArt": "Tableau abstrait",
+      "description": "Œuvre moderne aux couleurs vives, peinte à la main sur toile. Parfait pour égayer un mur sobre.",
+      "categorie": "Décoration murale",
+      "prix": 25.63,
+      "stock": 10,
+      "image": "assets/tab.jpg",
+      "id": "b5af"
+    },
+    {
+      "nomArt": "Miroir soleil en rotin",
+      "description": "Miroir circulaire entouré de rayons en rotin tressé, apportant une touche bohème et naturelle à votre intérieur.",
+      "categorie": "Décoration murale",
+      "prix": 580.36,
+      "stock": 5,
+      "image": "assets/miroir.jpeg",
+      "id": "1149"
+    },
+    {
+      "nomArt": "Sticker citation inspirante",
+      "description": "Adhésif mural avec une phrase motivante, facile à appliquer et à retirer sans abîmer les murs.",
+      "categorie": "Décoration murale",
+      "prix": 256.32,
+      "stock": 13,
+      "image": "assets/sticker.jpg",
+      "id": "ea10"
+    },
+    {
+      "id": "e284",
+      "nomArt": "vase cuivre",
+      "description": "grande taille",
+      "categorie": "Décoration saisonnière & Événementielle",
+      "prix": 188,
+      "stock": 1,
+      "image": "assets/images.jpg"
+    }
+  ]
+}

@@ -1,0 +1,97 @@
+<div class="container">
+  <!-- Barre de recherche -->
+  <div class="search-container mb-4">
+    <div class="input-group shadow-sm">
+      <span class="input-group-text">
+        <i class="fas fa-search"></i>
+      </span>
+      <input
+        type="text"
+        class="form-control search-input"
+        placeholder="Rechercher une catégorie..."
+        [(ngModel)]="searchTerm"
+        (input)="onSearch()"
+        autocomplete="off"
+      >
+    </div>
+    <small class="text-muted mt-2" *ngIf="searchTerm && filteredCategoryData.length === 0">
+      Aucune catégorie trouvée pour "{{searchTerm}}"
+    </small>
+  </div>
+  <div *ngIf="filteredCategoryData.length === 0" class="text-center py-5">
+    <div class="d-flex flex-column align-items-center">
+      <i class="bi bi-folder" style="font-size: 4rem; color: #6c757d;"></i>
+      <p class="mt-3 h5 text-muted">Aucune catégorie pour le moment</p>
+      <p class="text-muted">Cliquez sur "Ajouter une Catégorie" pour commencer</p>
+    </div>
+  </div>
+
+  <table class="table table-striped table-hover" *ngIf="filteredCategoryData.length > 0">
+    <thead class="table-dark">
+      <tr>
+        <th>ID</th>
+        <th>Nom</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let row of filteredCategoryData">
+        <td>{{ row.id }}</td>
+        <td>{{ row.name }}</td>
+        <td>
+          <button class="btn btn-sm btn-warning me-2" (click)="editCategory(row)" title="Modifier">
+            <i class="fas fa-edit"></i>
+          </button>
+          <button class="btn btn-sm btn-danger" (click)="deleteCategory(row)" title="Supprimer">
+            <i class="fas fa-trash-alt"></i>
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Pagination -->
+  <div class="d-flex justify-content-center mt-4">
+    <div class="btn-group btn-group-sm">
+      <button class="btn border" [disabled]="currentPage === 1" (click)="onPageChange(currentPage - 1)" style="background-color: white;">
+        <i class="bi bi-chevron-left"></i>
+      </button>
+      <button class="btn px-3" style="background-color: #363B48; color: white;">{{ currentPage }}</button>
+      <button class="btn border" [disabled]="currentPage === pages.length" (click)="onPageChange(currentPage + 1)" style="background-color: white;">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal -->
+<div class="modal" [class.show]="showAddModal" [style.display]="showAddModal ? 'block' : 'none'">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header bg-primary text-white">
+        <h5 class="modal-title">{{ categoryModelObj.id ? 'Modifier' : 'Ajouter' }} une Catégorie</h5>
+        <button type="button" class="btn-close" (click)="closeModal()"></button>
+      </div>
+      <div class="modal-body">
+        <form [formGroup]="formValue">
+          <div class="mb-3">
+            <label class="form-label">Nom de la catégorie</label>
+            <input type="text" class="form-control" formControlName="name" required>
+          </div>
+        </form>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" (click)="closeModal()">
+          <i class="fas fa-times"></i> Fermer
+        </button>
+        <button type="button" class="btn btn-primary" (click)="categoryModelObj.id ? updateCategory() : addCategory()">
+          <i class="fas fa-{{ categoryModelObj.id ? 'save' : 'plus-circle' }}"></i>
+          {{ categoryModelObj.id ? 'Modifier' : 'Ajouter' }}
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Modal Backdrop -->
+<div class="modal-backdrop fade show" *ngIf="showAddModal"></div>
