@@ -49,7 +49,7 @@ Ce projet est une application web développée avec Angular 17, permettant la ge
 
 1. Clonez le repository :
 ```bash
-git clone [URL_DU_REPO]
+git clone https://github.com/amalbenalii/ProjetArticleDecoration.git
 cd ProjetArticleDecoration
 ```
 
